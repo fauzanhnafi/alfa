@@ -24,7 +24,7 @@ $deviceid= "$random1-936d-974b-a9ef-$random2$random3";
 $deviceid2 = "\"$deviceid\"";
 echo "\n";
 echo "\n";
-echo "| Welcome to ALFAGIFT ACCOUNT GENERATOR!! \n";
+echo "| ALFAGIFT ACCOUNT GENERATOR \n";
 echo "| Script by Fauzan \n";
 echo "| WA 087875818789 \n";
 echo "| --------------------------- \n";
@@ -33,7 +33,7 @@ if(file_exists("config.json")){
     $token = $arr2['token'];
     $memberid = $arr2['id'];
     $hp = $arr2['hp'];
-    echo "| Anda sudah login menggunakan nomer hp $hp \n";
+    echo "| Anda sudah login menggunakan nomor hp $hp \n";
     echo "| 1. Login \n";
     echo "| 2. Daftar \n";
     echo "| Pilih: ";
@@ -98,7 +98,7 @@ $random_name = "Fauzan"." ".substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEF
 $random_email = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 7);
 $random_name = "\"$random_name\"";
 $random_email = "\"$random_email@gmail.com\"";
-$data_create = '{"address":"","birthDate":"1991-10-11","debug":false,"deviceId":'.$deviceid2.',"email":'.$random_email.',"firstName":"","fullName":'.$random_name.',"gender":"F","lastName":"","latitude":0,"longitude":0,"maritalStatus":"M","password":"akun1212","phone":'.$nomorhp.',"postCode":"","registerPonta":true,"token":'.$token2.'}';
+$data_create = '{"address":"","birthDate":"1991-10-11","debug":false,"deviceId":'.$deviceid2.',"email":'.$random_email.',"firstName":"","fullName":'.$random_name.',"gender":"F","lastName":"","latitude":0,"longitude":0,"maritalStatus":"M","password":"fF328926","phone":'.$nomorhp.',"postCode":"","registerPonta":true,"token":'.$token2.'}';
 $create_akun = curl($url_daftar,$header_otp,$data_create);
 $put = file_put_contents('createakunalfa.txt',$create_akun);
 $create_akun = json_decode($create_akun,true);
@@ -114,8 +114,8 @@ if($status_create !== "00"){
     $token = $create_akun['status']['token'];
     $id_ponta = $create_akun['member']['ponta']['accountCard'];
     $no_hp = $create_akun['member']['ponta']['phoneNumber'];
-    echo "| Sukses daftar!!! \n";
-    echo "| Nomer hp $no_hp dan password MantapJiwa \n";
+    echo "| Sukses \n";
+    echo "| Nomer hp $no_hp dan password fF328926 \n";
     echo "| Member Ponta $id_ponta \n";
     echo "| Loading voucher \n";
     sleep(4);
@@ -156,7 +156,7 @@ $heder_jadi = array(
  if($status == "00"){
     $total_voucher = $login['totalVouchers'];
     if($total_voucher == null){
-        echo "| Voucher Kosong!!! \n";
+        echo "| KAGAK KEBAGIAN VOUCHER!!! \n";
         
     }elseif($total_voucher !== null){
         echo "| Total voucher = $total_voucher \n";
