@@ -25,15 +25,15 @@ $deviceid2 = "\"$deviceid\"";
 echo "\n";
 echo "\n";
 echo "| ALFAGIFT ACCOUNT GENERATOR \n";
-echo "| Script by Fauzan \n";
-echo "| WA 087875818789 \n";
+echo "| SCRIPT BY FAUZAN \n";
+echo "| DIBUAT DENGAN CINTA <3 \n";
 echo "| --------------------------- \n";
 if(file_exists("config.json")){
     $arr2 = json_decode(file_get_contents('config.json'), true);
     $token = $arr2['token'];
     $memberid = $arr2['id'];
     $hp = $arr2['hp'];
-    echo "| Anda sudah login menggunakan nomor hp $hp \n";
+    echo "| ANDA SUDAH LOGIN DENGAN NOMOR $hp \n";
     echo "| 1. Login \n";
     echo "| 2. Daftar \n";
     echo "| Pilih: ";
@@ -43,7 +43,7 @@ if(file_exists("config.json")){
     }else{goto login;}
 }
 daftar:
-echo "| Masukan Nomor HP: ";
+echo "| Masukan NOMOR HP: ";
 $nomorhp = trim(fgets(STDIN));
 $nomorhp = "\"$nomorhp\"";
 
@@ -98,7 +98,7 @@ $random_name = "Fauzan"." ".substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEF
 $random_email = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 7);
 $random_name = "\"$random_name\"";
 $random_email = "\"$random_email@gmail.com\"";
-$data_create = '{"address":"","birthDate":"1991-10-11","debug":false,"deviceId":'.$deviceid2.',"email":'.$random_email.',"firstName":"","fullName":'.$random_name.',"gender":"F","lastName":"","latitude":0,"longitude":0,"maritalStatus":"M","password":"fF328926","phone":'.$nomorhp.',"postCode":"","registerPonta":true,"token":'.$token2.'}';
+$data_create = '{"address":"","birthDate":"1991-10-11","debug":false,"deviceId":'.$deviceid2.',"email":'.$random_email.',"firstName":"","fullName":'.$random_name.',"gender":"F","lastName":"","latitude":0,"longitude":0,"maritalStatus":"M","password":"Aa172839","phone":'.$nomorhp.',"postCode":"","registerPonta":true,"token":'.$token2.'}';
 $create_akun = curl($url_daftar,$header_otp,$data_create);
 $put = file_put_contents('createakunalfa.txt',$create_akun);
 $create_akun = json_decode($create_akun,true);
@@ -114,10 +114,10 @@ if($status_create !== "00"){
     $token = $create_akun['status']['token'];
     $id_ponta = $create_akun['member']['ponta']['accountCard'];
     $no_hp = $create_akun['member']['ponta']['phoneNumber'];
-    echo "| Sukses \n";
-    echo "| Nomer hp $no_hp dan password fF328926 \n";
-    echo "| Member Ponta $id_ponta \n";
-    echo "| Loading voucher \n";
+    echo "| SUKSES \n";
+    echo "| NOMOR HP $no_hp DENGAN PASSWORD Aa172839 \n";
+    echo "| MEMBER PONTA $id_ponta \n";
+    echo "| MENCARI VOUCHER \n";
     sleep(4);
     $arr1 = ["token"=>$token,"id"=>$memberid, "hp"=>$no_hp];
     file_put_contents("config.json",json_encode($arr1));
